@@ -1,0 +1,10 @@
+@extends('layouts.subPages')
+@section('title')
+About
+@endsection
+@section('content')
+@include('includes.about')
+@include('includes.team')
+@include('includes.history')
+@include('includes.prefooter')
+@endsection

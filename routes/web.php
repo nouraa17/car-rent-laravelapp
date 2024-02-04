@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[App\Http\Controllers\PageController::class,'index'])->name('index');
+Route::get('listing',[App\Http\Controllers\PageController::class,'listing'])->name('listing');
+Route::get('testimonials',[App\Http\Controllers\PageController::class,'testimonials'])->name('testimonials');
+Route::get('blog',[App\Http\Controllers\PageController::class,'blog'])->name('blog');
+Route::get('about',[App\Http\Controllers\PageController::class,'about'])->name('about');
+Route::get('contact',[App\Http\Controllers\PageController::class,'contact'])->name('contact');
