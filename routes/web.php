@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Auth::routes(['verify' => true]);
+// Auth::routes(['verify' => true]);
 
 
 /*
@@ -15,7 +15,7 @@ Auth::routes(['verify' => true]);
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('verified')->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('verified')->name('home');
 
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('index');

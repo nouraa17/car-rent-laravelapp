@@ -15,6 +15,9 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    
+                    <script>window.location.href = "{{ route('listusers') }}";</script>
+
                 </div>
             </div>
         </div>
