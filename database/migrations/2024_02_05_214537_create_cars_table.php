@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
+            $table->string('title',100);
+            $table->longText('content');
+            $table->integer('luggage');
+            $table->integer('doors');
+            $table->integer('passengers');
+            $table->float('price');
+            $table->boolean('active');
+            $table->string('image');
+            $table->foreignId('cat_id')->constrained('categories');
             $table->timestamps();
         });
     }
