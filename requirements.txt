@@ -15,8 +15,8 @@ inside admin
 13- if we press delete we can remove the car. **
 14- edit the car if we press edit using editCar **
 15- control testimonials (add - edit - delete) **
-16- show the messsages that we received from contact form.
-17- show count of the unread messages at top right.
+16- show the messsages that we received from contact form. **
+17- show count of the unread messages at top right. **
 
 
 main website
@@ -29,4 +29,4 @@ main website
 6- inide testimonials page, show all testimonials from db **
 7- blog page with fixed content. **
 8- About page with fixed content. **
-9- Contact page to send email to the owner of the website with the message details, and save the data to the DB to check from admin.
+9- Contact page to send email to the owner of the website with the message details, and save the data to the DB to check from admin. **

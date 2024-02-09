@@ -10,9 +10,10 @@ class NavbarComposer
 {
     public function compose(View $view)
     {
-        // $unreadCount = Message::where('is_viewed', false)->count();
-        // $view->with('unreadCount', $unreadCount);
+        $unreadCount = Message::where('is_viewed', false)->count();
+        $messages = Message::where('is_viewed', false)->get();
         $adminName = Auth::user()->name;
-            $view->with('adminName', $adminName);
+        $view->with(['adminName' => $adminName, 'unreadCount' => $unreadCount,'messages' => $messages]);
+        
     }
 }

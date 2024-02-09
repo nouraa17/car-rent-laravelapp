@@ -6,6 +6,7 @@ use App\Http\Controllers\CarUserController;
 use App\Http\Controllers\CategoryController;
 
 
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,6 +51,8 @@ Route::put('/updatetestimonial/{id}', [TestimonialController::class, 'update'])-
 Route::get('/deletetestimonial/{id}', [TestimonialController::class, 'destroy'])->name('deletetestimonial');
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-Route::get('/listmessages', function () {
-    return view('admin.messages.listMessages');
-})->name('listmessages');
+
+Route::get('/listmessages', [MessageController::class, 'index'])->name('listmessages');
+Route::post('/messagesubmit', [MessageController::class, 'store'])->name('messagesubmit');
+Route::get('/showmessage/{id}', [MessageController::class, 'show'])->name('showmessage');
+Route::get('/deletemessage/{id}', [MessageController::class, 'destroy'])->name('deletemessage');
