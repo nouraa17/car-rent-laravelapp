@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
         // ]);
         // Category::factory(3)->create();
         Car::factory(20)->create();
-        Testimonial::factory(10)->create();
+        // Testimonial::factory(10)->create();
     }
 }

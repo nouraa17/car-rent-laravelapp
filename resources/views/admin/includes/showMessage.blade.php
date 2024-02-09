@@ -51,7 +51,7 @@
                       $message['fname']." ".$message['lname'] }}</p>
                     <p style="font-size:20px;"><span style="color: #0867ec;font-size:20px;">Sender Email:</span> {{
                       $message['email'] }}</p>
-                    <p style="font-size:20px;"><span style="color: #0867ec;font-size:20px;">Content:</span> {{
+                    <p style="font-size:20px; white-space: pre-line; display: block; word-wrap: break-word;"><span style="color: #0867ec;font-size:20px;">Content:</span> {{
                       $message['message'] }}</p>
                     <p style="font-size:20px;">Respond as soon as possible!</p>
                   </table>

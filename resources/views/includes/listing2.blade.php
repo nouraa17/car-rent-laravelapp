@@ -48,20 +48,6 @@
             @endforeach
         </div>
 
-        <div class="row">
-    <div class="col-5">
-        <div class="custom-pagination">
-            @for ($i = 1; $i <= $cars->lastPage(); $i++)
-                @if ($i == $cars->currentPage())
-                    <span>{{ $i }}</span>
-                @else
-                    <a href="{{ $cars->url($i) }}">{{ $i }}</a>
-                @endif
-            @endfor
-        </div>
-    </div>
-</div>
-
 
     </div>
 </div>

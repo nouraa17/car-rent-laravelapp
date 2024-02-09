@@ -14,7 +14,7 @@
 
         @include('includes.prelisting')
 
-        @include('includes.listing')
+        @include('includes.listing2')
 
         @include('includes.features')
 

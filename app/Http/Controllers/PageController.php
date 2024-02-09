@@ -18,7 +18,7 @@ class PageController extends Controller
 
     public function listing()
     {
-        $cars = Car::where('active', true)->latest()->take(6)->get();
+        $cars = Car::where('active', true)->paginate(6);
         $testimonials = Testimonial::where('published', true)->latest()->take(3)->get();
 
         return view('listing', compact('cars', 'testimonials'));

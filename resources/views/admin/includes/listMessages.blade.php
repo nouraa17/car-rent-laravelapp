@@ -64,7 +64,8 @@
                       <tr>
                         <td>{{$message->fname." ".$message->lname}}</td>
                         <td>{{$message->email}}</td>
-                        <td><a href="{{route('showmessage',$message->id)}}" onclick="markAsViewed({{ $message->id }})"><img
+                        <td><a href="{{route('showmessage',$message->id)}}"
+                            onclick="markAsViewed({{ $message->id }})"><img
                               src="{{asset('adminAssets/images/edit.png')}}" alt="Edit"></a></td>
                         <td><a href="{{route('deletemessage',$message->id)}}"><img
                               src="{{asset('adminAssets/images/delete.png')}}" alt="Delete"
@@ -86,8 +87,8 @@
 <script>
   function markAsViewed(id    fetch(`/markAsViewed/${id}`, {
       : 'POST',
-                   'Con        lication/json',
-        'X-CSRF-TOKE        en() }}'
+    'Con        lication/json',
+    'X-CSRF-TOKE        en() }}'
       },
     })
   }
