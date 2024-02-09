@@ -40,6 +40,11 @@
                     </ul>
                     <div class="clearfix"></div>
                   </div>
+                  @if(session('success'))
+                    <div class="alert alert-success">
+                        <span><b> Success - </b>{{ session('success') }}</span>
+                    </div>
+                    @endif
                   <div class="x_content">
                       <div class="row">
                           <div class="col-sm-12">
@@ -55,28 +60,15 @@
                         </tr>
                       </thead>
                       <tbody>
+                        @foreach($testimonials as $testimonial)
                         <tr>
-                          <td>Car 10</td>
-                          <td>250</td>
-                          <td>Yes</td>
-                          <td><img src="{{asset('adminAssets/images/edit.png')}}" alt="Edit"></td>
-                          <td><img src="{{asset('adminAssets/images/delete.png')}}" alt="Delete"></td>
+                          <td>{{$testimonial->name}}</td>
+                          <td>{{$testimonial->position}}</td>
+                          <td>{{$testimonial->published ? 'Yes' : 'No'}}</td>
+                          <td><a href="edittestimonial/{{ $testimonial->id }}"><img src="{{asset('adminAssets/images/edit.png')}}" alt="Edit"></a></td>
+                          <td><a href="deletetestimonial/{{ $testimonial->id }}" onclick="return confirm('Are you sure you want to delete?')"><img src="{{asset('adminAssets/images/delete.png')}}" alt="Delete"></a></td>
                         </tr>
-                        <tr>
-                          <td>Car 1</td>
-                          <td>150</td>
-                          <td>Yes</td>
-                          <td><img src="{{asset('adminAssets/images/edit.png')}}" alt="Edit"></td>
-                          <td><img src="{{asset('adminAssets/images/delete.png')}}" alt="Delete"></td>
-                        </tr>
-                        <tr>
-                          <td>Car 2</td>
-                          <td>200</td>
-                          <td>Yes</td>
-                          <td><img src="{{asset('adminAssets/images/edit.png')}}" alt="Edit"></td>
-                          <td><img src="{{asset('adminAssets/images/delete.png')}}" alt="Delete"></td>
-                        </tr>
-                        
+                        @endforeach
                       </tbody>
                     </table>
                   </div>

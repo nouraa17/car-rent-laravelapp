@@ -14,8 +14,8 @@ class Category extends Model
         'cat_name',
         ];
 
-        public function subjects()
+        public function cars()
     {
-        return $this->hasMany(Car::class);
+        return $this->hasMany(Car::class,'cat_id');
     }
 }

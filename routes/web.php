@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 // Auth::routes(['verify' => true]);
@@ -18,10 +19,11 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('verified')->name('home');
 
 
-Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('index');
-Route::get('listing', [App\Http\Controllers\PageController::class, 'listing'])->name('listing');
-Route::get('testimonials', [App\Http\Controllers\PageController::class, 'testimonials'])->name('testimonials');
-Route::get('blog', [App\Http\Controllers\PageController::class, 'blog'])->name('blog');
-Route::get('about', [App\Http\Controllers\PageController::class, 'about'])->name('about');
-Route::get('contact', [App\Http\Controllers\PageController::class, 'contact'])->name('contact');
+Route::get('/', [PageController::class, 'index'])->name('index');
+Route::get('listing', [PageController::class, 'listing'])->name('listing');
+Route::get('testimonials', [PageController::class, 'testimonials'])->name('testimonials');
+Route::get('blog', [PageController::class, 'blog'])->name('blog');
+Route::get('about', [PageController::class, 'about'])->name('about');
+Route::get('contact', [PageController::class, 'contact'])->name('contact');
+Route::get('show/{id}', [PageController::class, 'show'])->name('showcar');
 

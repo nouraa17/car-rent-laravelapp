@@ -22,7 +22,7 @@
 						<div class="col-md-12 col-sm-12 ">
 							<div class="x_panel">
 								<div class="x_title">
-									<h2>Add Testimonial</h2>
+									<h2>Edit Testimonial</h2>
 									<ul class="nav navbar-right panel_toolbox">
 										<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 										</li>
@@ -42,26 +42,33 @@
 								</div>
 								<div class="x_content">
 									<br />
-									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-										<div class="item form-group">
+									@if(session('success'))
+						<div class="alert alert-success">
+							<span><b> Success - </b>{{ session('success') }}</span>
+						</div>
+						@endif
+									<form action="{{route('updatetestimonial',$testimonial->id)}}" method="post" id="demo-form2" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
+										@csrf
+										@method('put')
+									<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Name <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="name" required="required" class="form-control ">
+												<input type="text" id="name" required="required" class="form-control " name="name" value="{{$testimonial->name}}">
 											</div>
 										</div>
                                         <div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Position <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="position" required="required" class="form-control ">
+												<input type="text" id="position" required="required" class="form-control " name="position" value="{{$testimonial->position}}">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="content">Content <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<textarea id="content" name="content" required="required" class="form-control">Contents</textarea>
+												<textarea id="content" name="content" required="required" class="form-control">{{$testimonial->content}}</textarea>
 											</div>
 										</div>
 										
@@ -69,7 +76,7 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Published</label>
 											<div class="checkbox">
 												<label>
-													<input type="checkbox" class="flat">
+													<input type="checkbox" class="flat" name="published" @checked($testimonial->published)>
 												</label>
 											</div>
 										</div>
@@ -77,14 +84,14 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="image">Image <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="file" id="image" name="image" required="required" class="form-control">
+												<input type="file" id="image" name="image" class="form-control">
 											</div>
 										</div>
 										<div class="ln_solid"></div>
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
-												<button class="btn btn-primary" type="button">Cancel</button>
-												<button type="submit" class="btn btn-success">Add</button>
+											<a class="btn btn-primary" href="{{route('listtestimonials')}}">Cancel</a>
+												<button type="submit" class="btn btn-success">Update</button>
 											</div>
 										</div>
 

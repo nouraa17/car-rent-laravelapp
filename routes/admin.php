@@ -6,6 +6,7 @@ use App\Http\Controllers\CarUserController;
 use App\Http\Controllers\CategoryController;
 
 
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes(['verify' => true]);
@@ -40,17 +41,14 @@ Route::put('/updatecar/{id}', [CarController::class, 'update'])->name('updatecar
 Route::get('/deletecar/{id}', [CarController::class, 'destroy'])->name('deletecar');
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-Route::get('/listtestimonials', function () {
-    return view('admin.testimonials.listTestimonials');
-})->name('listtestimonials');
 
-Route::get('/addtestimonial', function () {
-    return view('admin.testimonials.addTestimonial');
-})->name('addtestimonial');
+Route::get('/listtestimonials', [TestimonialController::class, 'index'])->name('listtestimonials');
+Route::get('/addtestimonial', [TestimonialController::class, 'create'])->name('addtestimonial');
+Route::post('/storetestimonial', [TestimonialController::class, 'store'])->name('storetestimonial');
+Route::get('/edittestimonial/{id}', [TestimonialController::class, 'edit'])->name('edittestimonial');
+Route::put('/updatetestimonial/{id}', [TestimonialController::class, 'update'])->name('updatetestimonial');
+Route::get('/deletetestimonial/{id}', [TestimonialController::class, 'destroy'])->name('deletetestimonial');
 
-Route::get('/edittestimonial', function () {
-    return view('admin.testimonials.editTestimonial');
-})->name('edittestimonial');
 ////////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/listmessages', function () {
     return view('admin.messages.listMessages');

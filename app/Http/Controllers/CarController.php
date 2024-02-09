@@ -49,7 +49,7 @@ class CarController extends Controller
     public function store(Request $request)
     {
         $car = $request->validate([
-            'title' => 'required|string|max:50',
+            'title' => 'required|string|max:100',
             'content' => 'required|string',
             'luggage' => 'required|numeric',
             'doors' => 'required|numeric',
