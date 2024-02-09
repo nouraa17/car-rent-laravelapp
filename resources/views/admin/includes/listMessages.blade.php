@@ -64,9 +64,9 @@
                       <tr>
                         <td>{{$message->fname." ".$message->lname}}</td>
                         <td>{{$message->email}}</td>
-                        <td><a href="showmessage/{{$message->id}}" onclick="markAsViewed({{ $message->id }})"><img
+                        <td><a href="{{route('showmessage',$message->id)}}" onclick="markAsViewed({{ $message->id }})"><img
                               src="{{asset('adminAssets/images/edit.png')}}" alt="Edit"></a></td>
-                        <td><a href="deletemessage/{{$message->id}}"><img
+                        <td><a href="{{route('deletemessage',$message->id)}}"><img
                               src="{{asset('adminAssets/images/delete.png')}}" alt="Delete"
                               onclick="return confirm('Are you sure you want to delete?')"></a></td>
                       </tr>

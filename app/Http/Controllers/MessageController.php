@@ -90,7 +90,7 @@ class MessageController extends Controller
     public function destroy(string $id)
     {
         Message::where('id', $id)->delete();
-        return redirect('listMessages')->with('success', 'Message has been deleted successfully!');
+        return redirect('admin/listmessages')->with('success', 'Message has been deleted successfully!');
     }
 
 }
