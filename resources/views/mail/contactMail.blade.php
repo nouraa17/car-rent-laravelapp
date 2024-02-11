@@ -317,7 +317,7 @@
                       </tr>
                     </tbody>
                   </table>
-                  <p><span style="color: #0867ec;">Content:</span> {{ $formData['message'] }}</p>
+                  <p style="white-space: pre-line; display: block; word-wrap: break-word;"><span style="color: #0867ec;">Content:</span> {{ $formData['message'] }}</p>
                   <p>Respond as soon as possible!</p>
                 </td>
               </tr>

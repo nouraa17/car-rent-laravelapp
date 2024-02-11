@@ -4,15 +4,15 @@ use App\Http\Controllers\CarController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CarUserController;
 use App\Http\Controllers\CategoryController;
-
-
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes(['verify' => true]);
 
-Route::get('/', [HomeController::class, 'index'])->middleware('verified')->name('home');
+Route::middleware(['verified'])->group(function () {
+    
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/admin/logout', [HomeController::class, 'logout'])->name('adminlogout');
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -56,3 +56,4 @@ Route::get('/listmessages', [MessageController::class, 'index'])->name('listmess
 Route::post('/messagesubmit', [MessageController::class, 'store'])->name('messagesubmit');
 Route::get('/showmessage/{id}', [MessageController::class, 'show'])->name('showmessage');
 Route::get('/deletemessage/{id}', [MessageController::class, 'destroy'])->name('deletemessage');
+});

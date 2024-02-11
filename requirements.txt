@@ -25,7 +25,7 @@ main website
 2- when we press any car we can display the car details on page "single" **
 3- at the right, we should display all categories name from the DB and counts inside each category. **
 4- show testimonials from DB on home page for recent 3 testimonials only. **
-5- inisde list page, show all cars with pagination.
+5- inisde list page, show all cars with pagination. **
 6- inide testimonials page, show all testimonials from db **
 7- blog page with fixed content. **
 8- About page with fixed content. **
